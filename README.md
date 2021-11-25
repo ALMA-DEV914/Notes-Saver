@@ -13,7 +13,14 @@ It's my job to build the back end, connect the two, and then deploy the entire a
 * HTML
 * CSS
 * JAVASCRIPT 
-* EXPRESS.JS
+* NPM -EXPRESS.JS
+
+## Usage
+
+This application will let you write your notes or tasks to organize your time. And it will be save on the page for your reference.
+
+[Heroku Application Link](https://time-saver-12345.herokuapp.com/)
+[LIVE SERVER LINK](http://localhost:3001/)
 
 ### Snapshot
 <img width="1730" alt="Screen Shot 2021-11-25 at 2 02 33 PM" src="https://user-images.githubusercontent.com/65073138/143504537-55febc1e-cd7f-4634-bfa6-a2530f1538fa.png">
@@ -22,4 +29,8 @@ It's my job to build the back end, connect the two, and then deploy the entire a
 
 <img width="1749" alt="Screen Shot 2021-11-25 at 2 22 37 PM" src="https://user-images.githubusercontent.com/65073138/143504549-3b11f5d4-859b-4971-a5fe-62e402af91d7.png">
 
-### Question
+
+### Questions
+
+Please email me at: <a href="mailto:aungonalna58@gamil.com"> aungonalna58@gmail.com</a>
+
