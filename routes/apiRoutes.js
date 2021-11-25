@@ -7,40 +7,39 @@ const editNote = (updatedNotesArray) => {
   fs.writeFile('./db/db.json', JSON.stringify(updatedNotesArray), (err) => {
      if(err) throw err;
   });
-}
+};
 
 module.exports = (app) => {
 
 app.get('/api/notes', (req, res) => {
-  fs.readFile(`.db/db.json`, 'utf8', (err, data) => {
-    if(err){
-      console.log (err)
-    } else {
-      const parsedNotes = JSON.parse(data);
-      res.json(parsedNotes);
-    }
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    if(err)throw err;
+    res.json(JSON.parse(data));
+    
   });
 });
 
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
+
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
-    if(err) throw err;
+    if (err) throw err;
 
     const notesArray = JSON.parse(data);
-    newNote.id = uniqueId({length: 28});
+    newNote.id = generateUniqueId({length: 6});
     notesArray.push(newNote);
 
     editNote(notesArray);
     console.log(`New note added! Title: ${JSON.stringify(newNote.title)}, Text: ${JSON.stringify(newNote.text)}, Id: ${JSON.stringify(newNote.id)} `);
-  });
   res.send(notesArray);
+});
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-  const deleteNotesById = req.param.id;
-  fs.readFile('./db/db.json', 'utf8', (req, res) => {
-    if(err) throw err;
+  const deleteNotesById = req.params.id;
+
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    if (err) throw err;
 
     let notesArray = JSON.parse(data);
     for(let i = 0; i < notesArray.length; i++){
@@ -55,9 +54,9 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.put('/api/notes/:id', (req, res) => {
-  const editNoteId = req.param.id;
+  const editNoteId = req.params.id;
 
-  fs.readFile('./db/db.json', (req, res) => {
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
      if(err) throw err;
 
      let notesArray = JSON.parse(data);

@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // call the routes for the files
- require('./routes/apiRoutes/notes')(app);
- require('./routes/htmlRoutes/index')(app);
+ require('./routes/apiRoutes')(app);
+ require('./routes/htmlRoutes')(app);
 // calling the port to functions
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
