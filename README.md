@@ -19,8 +19,7 @@ It's my job to build the back end, connect the two, and then deploy the entire a
 
 This application will let you write your notes or tasks to organize your time. And it will be save on the page for your reference.
 
-[Heroku Application Link](https://time-saver-12345.herokuapp.com/)
-[LIVE SERVER LINK](http://localhost:3001/)
+You can view the apllication on [Heroku Application Link](https://time-saver-12345.herokuapp.com/)
 
 ### Snapshot
 <img width="1730" alt="Screen Shot 2021-11-25 at 2 02 33 PM" src="https://user-images.githubusercontent.com/65073138/143504537-55febc1e-cd7f-4634-bfa6-a2530f1538fa.png">
