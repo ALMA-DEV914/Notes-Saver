@@ -1,40 +1,44 @@
+// calling the file system to manipulate the files on our directory
 const fs = require('fs');
-
+// set the variable to create id for each notes
 const generateUniqueId = require('generate-unique-id');
 
-
+// create a function to edit the notes 
 const editNote = (updatedNotesArray) => {
   fs.writeFile('./db/db.json', JSON.stringify(updatedNotesArray), (err) => {
      if(err) throw err;
   });
 };
-
+// call the request to get the data requested
 module.exports = (app) => {
-
+// create a request to read the files save on db.json file
 app.get('/api/notes', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if(err)throw err;
+    // parse the json string to the object
     res.json(JSON.parse(data));
     
   });
 });
-
+// create a request to post or received data into db.json file
 app.post('/api/notes', (req, res) => {
+  // set the new data and return to the body
   const newNote = req.body;
 
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
-
+// save the data and add it to the db.json file
     const notesArray = JSON.parse(data);
     newNote.id = generateUniqueId({length: 6});
     notesArray.push(newNote);
 
     editNote(notesArray);
     console.log(`New note added! Title: ${JSON.stringify(newNote.title)}, Text: ${JSON.stringify(newNote.text)}, Id: ${JSON.stringify(newNote.id)} `);
-  res.send(notesArray);
+    // send the array of notes
+   res.send(notesArray);
 });
 });
-
+// create a request to delete the notes with given id
 app.delete('/api/notes/:id', (req, res) => {
   const deleteNotesById = req.params.id;
 
@@ -50,6 +54,7 @@ app.delete('/api/notes/:id', (req, res) => {
     editNote(notesArray);
     console.log(`Note Id: ${deleteNotesById} was deleted!`);
     res.send(notesArray);
+  
   });
 });
 

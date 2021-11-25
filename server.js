@@ -1,8 +1,9 @@
-// call the express to run this code/file
+// call the npm package express to run this code/file
 const express = require('express');
 // assign the url path/port
 const PORT = process.env.PORT || 3001;
 
+// initializing the app from express server
 const app = express();
 
 // use middleware for the root of the file path
