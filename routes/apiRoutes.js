@@ -1,5 +1,6 @@
 // calling the file system to manipulate the files on our directory
 const fs = require('fs');
+
 // set the variable to create id for each notes
 const generateUniqueId = require('generate-unique-id');
 
@@ -9,7 +10,7 @@ const editNote = (updatedNotesArray) => {
      if(err) throw err;
   });
 };
-// call the request to get the data requested
+
 module.exports = (app) => {
 // create a request to read the files save on db.json file
 app.get('/api/notes', (req, res) => {
