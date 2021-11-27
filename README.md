@@ -6,7 +6,7 @@
 
 My challenge is to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
 
-It's my job to build the back end, connect the two, and then deploy the entire application to Heroku.
+It's my job to build the back end, connect the front end, and then deploy the entire application to Heroku.
 
 ## Tools and Software
 
@@ -14,10 +14,21 @@ It's my job to build the back end, connect the two, and then deploy the entire a
 * CSS
 * JAVASCRIPT 
 * NPM -EXPRESS.JS
+* HEROKU CLI
 
 ## Usage
 
 This application will let you write your notes or tasks to organize your time. And it will be save on the page for your reference.
+
+You can clone the Github repository to test the application. And initilaize:
+
+1. npm init -y(Node.js packages)
+2. npm install express(package to build our app and API's)
+3. npm install generate-unique-id (for package to create id's for your objects)
+
+I created a console log for each notes being deleted and you can only view the id through running the application on your terminal with command npm start/ node server.js and try to delete some notes from the deployed application.
+
+You can also view the notes in an array format by visiting the db.json in db folder.
 
 You can view the apllication on [Heroku Application Link](https://time-saver-12345.herokuapp.com/)
 
